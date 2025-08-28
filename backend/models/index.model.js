@@ -10,6 +10,7 @@ const LearningPath = require("./learningpath.model");
 const Membership = require("./membership.model");
 const Role = require("./role.model");
 const User = require("./user.model");
+const PasswordResetToken = require("./passwordresettoken.model");
 const { associateModels } = require("./associations.model");
 
 // Export all models to the world
@@ -26,4 +27,5 @@ module.exports = {
     CourseRequirement,
     CourseReview,
     CourseSkill,
+    PasswordResetToken
 };

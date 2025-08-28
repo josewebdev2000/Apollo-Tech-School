@@ -9,6 +9,7 @@ const { courseModuleJson } = require("./coursemodule.json");
 const { courseSkillJson } = require("./courseskill.json");
 const { courseRequirementJson } = require("./courserequirement.json");
 const { courseReviewJson } = require("./coursereview.json");
+const { requestTokenJson, invalidTokenJson, validTokenJson } = require("./passwordresettoken.json");
 
 module.exports = {
     categoryJson,
@@ -26,5 +27,8 @@ module.exports = {
     courseModuleJson,
     courseSkillJson,
     courseRequirementJson,
-    courseReviewJson
+    courseReviewJson,
+    requestTokenJson,
+    validTokenJson,
+    invalidTokenJson
 };

@@ -56,10 +56,32 @@ function verifyJwt(token, secret)
     }
 }
 
+function generateUniqueRandomPin()
+{
+    const min = 100000; // Minimum 6-Digit Number
+    const max = 999999; // Maximum 6-Digit Number
+
+    // Declare PIN Code
+    const pin = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    // Return the new pin in String format
+    return pin.toString();
+}
+
+function isWithinTheLast15Mins(date)
+{
+    const now = new Date();
+    const fifteenMinsAgo = new Date(now.getTime() - 15 * 60 * 1000);
+
+    return date >= fifteenMinsAgo && date <= now;
+}
+
 module.exports = {
     isValidIdFormat,
     getTodaysDate,
     isFirstDateAfterSecondDate,
-    verifyJwt
+    verifyJwt,
+    generateUniqueRandomPin,
+    isWithinTheLast15Mins
 };
 

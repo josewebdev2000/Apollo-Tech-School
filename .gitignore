@@ -3,3 +3,7 @@ frontend/node_modules
 backend/node_modules
 backend/db-creds.txt
 backend/.env
+backend/migrations
+backend/models/index.js
+backend/config/config.json
+backend/seeders

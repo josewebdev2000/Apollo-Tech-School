@@ -10,6 +10,7 @@ const LearningPath = require("./learningpath.model");
 const Membership = require("./membership.model");
 const Role = require("./role.model");
 const User = require("./user.model");
+const PasswordResetToken = require("./passwordresettoken.model");
 
 function associateModels()
 {
@@ -88,6 +89,17 @@ function associateModels()
     CourseSkill.belongsTo(Course, {
         foreignKey: "courseId",
         as: "course"
+    });
+
+    /** USER & PASSWORD RESET TOKEN */
+    PasswordResetToken.belongsTo(User, {
+        foreignKey: "userId",
+        as: "course"
+    });
+
+    User.hasMany(PasswordResetToken, {
+        foreignKey: "userId",
+        as: "passwordResetTokens"
     });
 
     /** USER & COURSE REVIEW */
